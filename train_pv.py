@@ -8,7 +8,7 @@ from models.FutureGuidedLearner import FutureGuidedLearner
 # ===============================
 # 1. 读取光伏数据
 # ===============================
-data = pd.read_csv('data/pv_data.csv')
+data = pd.read_csv('CHBMIT/Dataset/光伏功率数据集.csv')
 
 features = ["Global_Horizontal_Radiation", "Pyranometer_1", "Wind_Speed", "Temperature_Probe_1"]
 target = ["Active_Power"]
@@ -56,7 +56,7 @@ loss_fn = torch.nn.MSELoss()
 # ===============================
 # 4. 训练循环
 # ===============================
-EPOCHS = 10
+EPOCHS = 100
 for epoch in range(EPOCHS):
     model.train()
     total_loss = 0
